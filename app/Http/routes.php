@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => 'api'], function () {
+    Route::group(['prefix' => 'auth'], function () {
+        Route::post('authenticate', 'AuthenticateController@authenticate');
+        Route::get('authenticate/user', 'AuthenticateController@getAuthenticatedUser');
+        Route::post('register', 'AuthenticateController@signup');
+    });
+});
