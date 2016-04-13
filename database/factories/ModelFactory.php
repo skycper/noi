@@ -22,10 +22,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Order::class, function (Faker\Generator $faker) {
 	$a = array("四川省","南充市","顺庆区","南部县","成都市","上海市","虹口区","宝山区","南通市","江苏省");
+	$b = array("新订单","已完成订单","未确认订单","退货订单");
     return [
         'address' => $a[array_rand($a)],
         'dealer' => $faker->name,
         'order_date' => $faker->date(),
-        'order_status' => rand(1,4),
+        'order_status' => $b[array_rand($b)],
     ];
 });

@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->string('dealer');
             $table->date('order_date');
-            $table->integer('order_status');
+            $table->string('order_status');
             $table->timestamps();
         });
     }
