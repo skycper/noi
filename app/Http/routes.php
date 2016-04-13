@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::resource('order', 'OrderController');
 
 Route::group(['prefix' => 'api'], function () {
     Route::group(['prefix' => 'auth'], function () {
